@@ -1,0 +1,27 @@
+{
+  "name": "swing-only-golf",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11 <12"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test scripts/conventions.test.mjs",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run build",
+    "check:pr": "node scripts/check-conventions.mjs pr",
+    "setup:hooks": "git config --local core.hooksPath .githooks"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10",
+    "typescript": "7.0.2",
+    "vite": "8.3.7"
+  }
+}
